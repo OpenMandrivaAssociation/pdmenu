@@ -3,7 +3,8 @@ Name:		pdmenu
 Version:	1.2.90
 Release:	%mkrel 1
 URL:		http://kitenet.net/programs/pdmenu/
-Source:		http://ftp.debian.org/debian/pool/main/p/pdmenu/pdmenu_%version.tar.gz
+Source0:	http://ftp.debian.org/debian/pool/main/p/pdmenu/pdmenu_%version.tar.gz
+Source1:	pdmenurc
 License:	GPL
 Group:		Shells
 BuildRoot:	%_tmppath/%name-%version-%release-root
