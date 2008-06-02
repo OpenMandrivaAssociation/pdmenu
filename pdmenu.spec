@@ -46,7 +46,7 @@ rm -fr %buildroot
 
 %postun
 if [ "$1" = 0 ]; then
-  rm -rf %{_localstatedir}/pdmenu
+  rm -rf %{_localstatedir}/lib/pdmenu
 fi
 
 %files -f %{name}.lang
