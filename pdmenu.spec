@@ -1,7 +1,7 @@
 Summary:	A simple text-based menu program
 Name:		pdmenu
 Version:	1.2.90
-Release:	%mkrel 1
+Release:	%mkrel 3
 URL:		http://kitenet.net/programs/pdmenu/
 Source0:	http://ftp.debian.org/debian/pool/main/p/pdmenu/pdmenu_%version.tar.gz
 Source1:	pdmenurc
