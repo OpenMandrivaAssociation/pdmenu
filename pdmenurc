@@ -1,0 +1,53 @@
+#!/usr/bin/pdmenu
+
+#Note that the above bang-path isn't required, but it lets you run this
+#file directly as a sort of pdmenu script.
+
+#Define the main menu:
+menu:main:Main Menu
+	show:_Installed RPM Packages::rpmpkgs
+	show:System _Tools::system-tools
+	exec:_Directory listing:display:ls -l
+	exec:_Change directory:edit,setenv:echo PWD=~set to?:~
+	exec:Display the _time:display:date
+	show:_Help!::help
+	nop
+	exit:E_xit
+
+menu:system-tools:System Tools
+	exec:_See how much disk space is free:display:echo \
+		"Free space on filesystems:"; df
+	exec:_Who's online?:display:echo "These users are online:";w
+	exec:_Change your password:pause:passwd
+	nop
+	exit:_Main Menu...
+
+menu:rpmpkgs:Installed RPM Packages
+	group:Get _info about an installed package
+		exec::makemenu: \
+			echo "menu:rpm-info:Select the package about which you want info"; \
+			for p in `rpm -qa`; do \
+				echo "exec:`echo $p | sed 's/_/\\\_/g'`:display:rpm -qi $p"; \
+			done
+		show:::rpm-info
+		remove:::rpm-info
+	endgroup
+	group:_List the files that belong to an installed package
+		exec::makemenu: \
+		echo "menu:rpm-file-list:Select the package for which you want to list the files"; \
+		for p in `rpm -qa`; do \
+			echo "exec:`echo $p | sed 's/_/\\\_/g'`:display:rpm -ql $p"; \
+		done
+		show:::rpm-file-list
+		remove:::rpm-file-list
+	endgroup
+	exec:List which package a _command belongs to:edit,display:/usr/lib/pdmenu/rpm-info-on-command ~What command?:~
+	exec:List which package a _file belongs to:edit,display:rpm -qif ~What file?:~ 2> /dev/null
+	nop
+	exit:_Main Menu...
+
+menu:help:Help
+	exec:Help on _using this menu system::man pdmenu
+	exec:Read a _Man Page:edit:man ~Read the manual page for what command?:~
+	nop
+	exit:_Main Menu...
