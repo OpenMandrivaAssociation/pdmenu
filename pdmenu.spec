@@ -1,7 +1,7 @@
 Summary:	A simple text-based menu program
 Name:		pdmenu
 Version:	1.3.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Shells
 Url:		http://kitenet.net/programs/pdmenu/
