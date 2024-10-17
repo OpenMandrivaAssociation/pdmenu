@@ -4,7 +4,7 @@ Version:	1.3.4
 Release:	1
 License:	GPLv2+
 Group:		Shells
-Url:		http://kitenet.net/programs/pdmenu/
+Url:		https://kitenet.net/programs/pdmenu/
 Source0:	http://ftp.debian.org/debian/pool/main/p/pdmenu/pdmenu_%version.tar.gz
 Source1:	pdmenurc
 Buildrequires:	slang-devel
