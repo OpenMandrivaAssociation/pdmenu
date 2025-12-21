@@ -7,6 +7,11 @@ Group:		Shells
 Url:		https://kitenet.net/programs/pdmenu/
 Source0:	http://ftp.debian.org/debian/pool/main/p/pdmenu/pdmenu_%version.tar.gz
 Source1:	pdmenurc
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 Buildrequires:	slang-devel
 Requires:	gpm >= 1.17.8
 Conflicts:	menu < 2.0.0
